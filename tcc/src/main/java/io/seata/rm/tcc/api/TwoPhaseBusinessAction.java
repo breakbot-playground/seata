@@ -15,6 +15,11 @@
  */
 package io.seata.rm.tcc.api;
 
+import io.seata.commonapi.rm.tcc.api.BusinessActionContext;
+import io.seata.commonapi.rm.tcc.api.BusinessActionContextParameter;
+import io.seata.commonapi.rm.tcc.api.BusinessActionContextUtil;
+import io.seata.rm.tcc.interceptor.TccActionInterceptor;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
@@ -29,7 +34,7 @@ import java.lang.annotation.Target;
  * @author zhangsen
  * @see io.seata.rm.tcc.api.LocalTCC // TCC annotation, which added on the TCC interface. It can't be left out.
  * @see io.seata.spring.annotation.GlobalTransactionScanner#wrapIfNecessary(Object, String, Object) // the scanner for TM, GlobalLock, and TCC mode
- * @see io.seata.spring.tcc.TccActionInterceptor // the interceptor of TCC mode
+ * @see TccActionInterceptor // the interceptor of TCC mode
  * @see BusinessActionContext
  * @see BusinessActionContextUtil
  * @see BusinessActionContextParameter

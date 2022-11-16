@@ -15,8 +15,9 @@
  */
 package io.seata.rm.tcc.remoting.parser;
 
+import io.seata.commonapi.remoting.parser.DefaultRemotingParser;
 import io.seata.rm.tcc.TccParam;
-import io.seata.rm.tcc.api.BusinessActionContext;
+import io.seata.commonapi.rm.tcc.api.BusinessActionContext;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +25,7 @@ import java.lang.reflect.Method;
 
 public class DefaultRemotingParserTest {
 
-    DefaultRemotingParser defaultRemotingParser = new DefaultRemotingParser();
+    DefaultRemotingParser defaultRemotingParser = DefaultRemotingParser.get();
 
     @Test
     public void testGetTwoPhaseArgs() throws Exception {
